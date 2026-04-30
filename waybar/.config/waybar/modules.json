@@ -1,0 +1,90 @@
+{
+    "custom/launcher": {
+        "format": "",
+        "on-click": "fuzzel",
+        "tooltip-format": "Application Launcher"
+    },
+
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "thunar",
+        "tooltip-format": "File Manager"
+    },
+
+    "custom/terminal": {
+        "format": "",
+        "on-click": "alacritty --working-directory ~/",
+        "tooltip-format": "Terminal"
+    },
+    
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        "persistent-workspaces": {
+          "*": 5
+    }
+    },
+
+    "hyprland/window": {
+        "max-length": 160,
+        "separate-outputs": true,
+        "tooltip": false,
+        "icon": true
+    },
+
+    "mpris": {
+        "format": "{player_icon} {artist} - {title} {status_icon}",
+        "format-paused": "{player_icon} {artist} - {title} {status_icon}",
+        "tooltip-format": "{artist} - {title} - {album} {length}",
+        "player-icons": {
+            "default": ""
+        },
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": ""
+        },
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl stop"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+        "format-muted": "󰅶 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%A %B %Od %Y}"
+    },
+
+    "custom/power": {
+        "format" : "",
+		"tooltip-format": "Session Menu",
+		"on-click": "wlogout"
+    }
+}
